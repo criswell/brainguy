@@ -1,0 +1,13 @@
+FormEncode==1.2.6
+IMDbPY==4.9
+SQLAlchemy==0.8.2
+## FIXME: could not find svn URL in dependency_links for this package:
+SQLObject==1.5.0rc1dev-r4659
+Tempita==0.5.1
+argparse==1.2.1
+decorator==3.4.0
+distribute==0.6.24
+lxml==3.2.3
+python-Levenshtein==0.10.2
+sqlalchemy-migrate==0.7.2
+wsgiref==0.1.2
