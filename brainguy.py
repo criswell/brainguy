@@ -55,6 +55,9 @@ def process_series(root, files):
             season = result[0][0]
             episode = result[0][1]
             e = m['episodes'][season][episode]
+            url = 'http://www.imdb.com/title/tt%s/' % e.movieID
+            file_pre = f.split('.')[0:-2]
+            nfo_fname = '%s/%s.nfo' % ()
             import pdb; pdb.set_trace()
 
 
