@@ -60,7 +60,7 @@ def process_series(root, files):
     if service == 'imdb':
         process_series_imdb(root_id, root, files)
     elif service == 'tvdb':
-        process_series_tvdb(root_id, root. files)
+        process_series_tvdb(root_id, root, files)
     else:
         print('-= ERROR! Service id "%s" unknown, skipping' % service)
 
