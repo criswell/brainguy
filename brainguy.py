@@ -52,8 +52,8 @@ def process_series(root, files):
     for f in files:
         result = re.findall(r"(?:s|season)(\d{2})(?:e|x|episode|\n)(\d{2})", f, re.I)
         if len(result) > 0:
-            season = result[0][0]
-            episode = result[0][1]
+            season = int(result[0][0])
+            episode = int(result[0][1])
             e = m['episodes'][season][episode]
             import pdb; pdb.set_trace()
 
