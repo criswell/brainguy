@@ -59,6 +59,7 @@ def process_series(root, files):
             file_pre = f.split('.')[-1]
             nfo_fname = '%s/%s.nfo' % (root, file_pre)
             #import pdb; pdb.set_trace()
+            print('>--- Writing "%s"' % nfo_fname)
             with open(nfo_fname, 'wb') as outfile:
                 outfile.write('%s/n' % url)
 
