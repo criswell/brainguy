@@ -58,7 +58,9 @@ def process_series(root, files):
             url = 'http://www.imdb.com/title/tt%s/' % e.movieID
             file_pre = f.split('.')[-1]
             nfo_fname = '%s/%s.nfo' % (root, file_pre)
-            import pdb; pdb.set_trace()
+            #import pdb; pdb.set_trace()
+            with open(nfo_fname, 'wb') as outfile:
+                outfile.write('%s/n' % url)
 
 
 for p in args.paths:
