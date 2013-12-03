@@ -32,7 +32,7 @@ supported_types = [
 global_config = None
 try:
     global_config = configparser.SafeConfigParser()
-    global_config.readfp('%s/.brainguy' % os.path.expanduser("~"))
+    global_config.readfp(open('%s/.brainguy' % os.path.expanduser("~")))
     tvdb_api = None
     if global_config.has_option('global', 'api_key'):
         tvdb_api = global_config.get('global', 'api_key')
