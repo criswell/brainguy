@@ -62,7 +62,7 @@ def process_series(root, files):
                 #import pdb; pdb.set_trace()
                 print('>--- Writing "%s"' % nfo_fname)
                 with open(nfo_fname, 'wb') as outfile:
-                    outfile.write('%s/n' % url)
+                    outfile.write('%s\n' % url)
             except:
                 print('>--- ERROR processing s"%d" e"%d"' % (season, episode))
 
