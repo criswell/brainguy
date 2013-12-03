@@ -12,7 +12,7 @@ try:
 except ImportError:
     import configparser
 
-import os.path, sys, os, argparse
+import os.path, sys, os, argparse, re
 
 import imdb
 
@@ -38,18 +38,20 @@ def process_series(root, files):
     i = imdb.IMDb()
     m = i.get_movie(root_id)
 
-    episodes = dict()
-    titles = []
+    #episodes = dict()
+    #titles = []
 
     print("-= Updating all episodes...")
     i.update(m, 'episodes')
 
-    import pdb; pdb.set_trace()
+    #for season in m['episodes']:
+    #    for e in m['episodes'][season]:
+    #        episodes[e['title']] = e
+    #        titles.append(e['title'].lower())
 
-    for season in m['episodes']:
-        for e in m['episodes'][season]:
-            episodes[e['title']] = e
-            titles.append(e['title'].lower())
+    for f in files:
+        result = re.findall(r"(?:s|season)(\d{2})(?:e|x|episode|\n)(\d{2})", f, re.I)
+        import pdb; pdb.set_trace()
 
 
 for p in args.paths:
