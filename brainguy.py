@@ -57,7 +57,7 @@ def process_series(root, files):
             try:
                 e = m['episodes'][season][episode]
                 url = 'http://www.imdb.com/title/tt%s/' % e.movieID
-                file_pre = f.split('.')[:-1]
+                file_pre = ''.join(f.split('.')[:-1])
                 nfo_fname = '%s/%s.nfo' % (root, file_pre)
                 #import pdb; pdb.set_trace()
                 print('>--- Writing "%s"' % nfo_fname)
