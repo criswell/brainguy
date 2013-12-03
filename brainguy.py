@@ -54,15 +54,17 @@ def process_series(root, files):
         if len(result) > 0:
             season = int(result[0][0])
             episode = int(result[0][1])
-            e = m['episodes'][season][episode]
-            url = 'http://www.imdb.com/title/tt%s/' % e.movieID
-            file_pre = f.split('.')[-1]
-            nfo_fname = '%s/%s.nfo' % (root, file_pre)
-            #import pdb; pdb.set_trace()
-            print('>--- Writing "%s"' % nfo_fname)
-            with open(nfo_fname, 'wb') as outfile:
-                outfile.write('%s/n' % url)
-
+            try:
+                e = m['episodes'][season][episode]
+                url = 'http://www.imdb.com/title/tt%s/' % e.movieID
+                file_pre = f.split('.')[:-1]
+                nfo_fname = '%s/%s.nfo' % (root, file_pre)
+                #import pdb; pdb.set_trace()
+                print('>--- Writing "%s"' % nfo_fname)
+                with open(nfo_fname, 'wb') as outfile:
+                    outfile.write('%s/n' % url)
+            except:
+                print('>--- ERROR processing s"%d" e"%d"' % (season, episode))
 
 for p in args.paths:
     for root, dirs, files in os.walk(p):
