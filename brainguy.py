@@ -44,6 +44,8 @@ def process_series(root, files):
     print("-= Updating all episodes...")
     i.update(m, 'episodes')
 
+    import pdb; pdb.set_trace()
+
     for season in m['episodes']:
         for e in season:
             episodes[e['title']] = e
@@ -64,7 +66,7 @@ for p in args.paths:
                 show_type = supported_types[0]
                 print('>-- Using type "%s"' % show_type)
 
-            if show_type is 'series':
+            if show_type == 'series':
                 process_series(root, files)
 
 
