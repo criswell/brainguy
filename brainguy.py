@@ -52,6 +52,7 @@ def process_series(root, files):
 
 for p in args.paths:
     for root, dirs, files in os.walk(p):
+        print('> Processing "%s"' % root)
         if '.hint' in files:
             config = configparser.SafeConfigParser()
             config.readfp(open(os.path.abspath('%s/.hint' % root)))
