@@ -47,7 +47,7 @@ def process_series(root, files):
     import pdb; pdb.set_trace()
 
     for season in m['episodes']:
-        for e in season:
+        for e in m['episodes'][season]:
             episodes[e['title']] = e
             titles.append(e['title'].lower())
 
