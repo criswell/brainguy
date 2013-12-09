@@ -53,3 +53,4 @@ class Config(object):
         # Yay, these are my defaults, motherfucker!
         self.C.set('main', 'scratch_vob', '/scratch2/temp_vob')
         self.C.set('output', 'dest_dir', '/mnt/video/Incoming')
+
