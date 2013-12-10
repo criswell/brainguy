@@ -8,9 +8,10 @@ import logging
 
 from brainguy.config import Config
 
-if not __setup:
-    update_logger()
-    __setup = True
+try:
+    __setup
+except:
+    __setup = False
 
 def update_logger():
     debug_level = 3
@@ -36,3 +37,7 @@ def update_logger():
         log_level = logging.INFO
 
     logging.basicConfig(level=log_level, format=format)
+
+if not __setup:
+    update_logger()
+    __setup = True

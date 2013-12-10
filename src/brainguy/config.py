@@ -10,7 +10,7 @@ except ImportError:
 import os.path
 import os
 import time
-from traceback import print_exp
+#from traceback import print_exp
 
 class Config(object):
     __borg_state = {}
@@ -57,7 +57,7 @@ class Config(object):
 
         # Our default is to enabled ERROR and above
         self.C.set('main', 'log_level', '3')
-        self.C.set('main', 'log_file', None)
+        #self.C.set('main', 'log_file', None)
         self.C.set('main', 'log_format',
             '%(asctime)s-%(levelname)s | %(message)s')
 
