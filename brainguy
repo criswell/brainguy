@@ -5,3 +5,5 @@
    Brainguy main interface
 """
 
+import brainguy
+

@@ -13,12 +13,21 @@ import time
 from traceback import print_exp
 
 class Config(object):
+    __borg_state = {}
 
     def __init__(self, home_directory=os.path.expanduser("~")):
-        self._home_directory = home_directory
-        self._config_file = '%s/.brainguy'
-        self.C = configparser.SafeConfigParser()
-        self._load_config()
+        self.__dict__ = self.__borg_state
+
+        try:
+            self._setup
+        except AttributeError:
+            self._setup = False
+
+        if not self._setup:
+            self._home_directory = home_directory
+            self._config_file = '%s/.brainguy'
+            self.C = configparser.SafeConfigParser()
+            self._load_config()
 
     def _load_config(self):
         if os.path.isfile(self._config_file):
@@ -49,6 +58,8 @@ class Config(object):
         # Our default is to enabled ERROR and above
         self.C.set('main', 'log_level', '3')
         self.C.set('main', 'log_file', None)
+        self.C.set('main', 'log_format',
+            '%(asctime)s-%(levelname)s | %(message)s')
 
         # Yay, these are my defaults, motherfucker!
         self.C.set('main', 'scratch_vob', '/scratch2/temp_vob')
