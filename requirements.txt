@@ -1,0 +1,10 @@
+FormEncode==1.2.6
+IMDbPY==4.9
+SQLAlchemy==0.8.4
+SQLObject==1.5.0
+Tempita==0.5.1
+decorator==3.4.0
+lxml==3.2.4
+pbr==0.5.23
+sqlalchemy-migrate==0.8.2
+wsgiref==0.1.2
